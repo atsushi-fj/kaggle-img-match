@@ -5,7 +5,7 @@ test_path: "input/test"
 
 lr: 0.001
 epochs: 10
-cfg.patience: 10
+patience: 10
 seed: 42
 
 model_path: "baseline_model.pth"
