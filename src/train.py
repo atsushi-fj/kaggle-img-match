@@ -42,7 +42,7 @@ if __name__ == "__main__":
         get_train_dataset(cfg.train_path, train_data))
     
     val_dataloader = get_validation_dataloader(
-        get_validation_dataloader(cfg.train_path, val_data))
+        get_validation_dataset(cfg.train_path, val_data))
     
     
     # Training model
