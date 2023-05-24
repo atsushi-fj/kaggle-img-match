@@ -4,8 +4,8 @@ train_path: "input/train/"
 test_path: "input/test/"
 
 lr: 0.001
-epochs: 10
-patience: 10
+epochs: 300
+patience: 50
 seed: 42
 
 model_path: "baseline_model.pth"
