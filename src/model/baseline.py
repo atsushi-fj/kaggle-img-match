@@ -91,5 +91,3 @@ class BaseCNN(torch.nn.Module):
         
         return rotation_out, translation_out
     
-model = BaseCNN()
-print(len(model.layer_one[0].index))
