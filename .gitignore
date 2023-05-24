@@ -167,3 +167,8 @@ cython_debug/
 *.pth
 .tmp.*
 *.h5
+*.jpeg
+*.jpg
+*.txt
+*.png
+img-match-data/
