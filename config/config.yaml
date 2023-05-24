@@ -7,4 +7,9 @@ lr: 0.001
 epochs: 10
 cfg.patience: 10
 
-model_
+
+model_path: "baseline_model.pth"
+load_model_path: "model/baseline_model.pth"
+project: "kaggle-img-match"
+experiment_name: "baseline"
+model_name: "baseline"

@@ -26,7 +26,7 @@ if __name__ == "__main__":
                                model_name=cfg.model_name,
                                extra=args.extra)
 
-    with wandb.init(project=cfg["project"],
+    with wandb.init(project=cfg.project,
                     name=name,
                     config=cfg):
         cfg = wandb.config
