@@ -67,7 +67,7 @@ def save_model(model,
   
 def load_config(file="config.yaml"):
     """Load config file"""
-    config_path = Path("./config/")
+    config_path = Path("./kaggle-img-match/config/")
     with open(config_path / file, 'r') as file:
         cfg = yaml.safe_load(file)
     cfg = Namespace(**cfg)
