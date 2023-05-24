@@ -23,7 +23,7 @@ class ImageDataset(Dataset):
         img_path = self.img_path[index]
         img_path = self.root + img_path
         image = cv2.imread(img_path)
-        print(image.type)
+        print(image)
         
         if self.transforms is not None:
             image = self.transforms(image=image)['image']
