@@ -1,0 +1,10 @@
+root: "input/"
+train_label_file: "train_labels.csv"
+train_path: "input/train"
+test_path: "input/test"
+
+lr: 0.001
+epochs: 10
+cfg.patience: 10
+
+model_
