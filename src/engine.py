@@ -40,7 +40,7 @@ def val_step(model,
               loss_fn,
               device):
     model.eval() 
-    val_loss, val_rot_loss, val_trans_loss = 0, 0, 0
+    val_loss, rot_loss, trans_loss = 0, 0, 0
     
     with torch.inference_mode():
         for batch, (imgs, rotation_labels, translation_labels) in enumerate(dataloader):
@@ -54,11 +54,11 @@ def val_step(model,
             translation_loss = loss_fn(translation_output, translation_labels)
             loss = rotation_loss + translation_loss
             
-            loss += loss.item()
+            val_loss += loss.item()
             rot_loss += rotation_loss.item()
             trans_loss += translation_loss.item()
 
-    loss = loss / len(dataloader)
+    val_loss = val_loss / len(dataloader)
     rot_loss = rot_loss / len(dataloader)
     trans_loss = trans_loss / len(dataloader)
     return loss, rot_loss, trans_loss
