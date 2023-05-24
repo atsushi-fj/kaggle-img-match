@@ -22,8 +22,8 @@ class ImageDataset(Dataset):
     def __getitem__(self, index):
         img_path = self.img_path[index]
         img_path = self.root + img_path
+        print(img_path)
         image = cv2.imread(img_path)
-        print(image)
         
         if self.transforms is not None:
             image = self.transforms(image=image)['image']
