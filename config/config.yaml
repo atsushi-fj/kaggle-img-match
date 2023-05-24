@@ -1,7 +1,7 @@
 root: "input/"
 train_label_file: "train_labels.csv"
-train_path: "input/train"
-test_path: "input/test"
+train_path: "input/train/"
+test_path: "input/test/"
 
 lr: 0.001
 epochs: 10
