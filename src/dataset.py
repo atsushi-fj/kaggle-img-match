@@ -23,6 +23,7 @@ class ImageDataset(Dataset):
         img_path = self.img_path[index]
         img_path = self.root + img_path
         image = cv2.imread(img_path)
+        print(image.type)
         
         if self.transforms is not None:
             image = self.transforms(image=image)['image']
@@ -33,7 +34,7 @@ class ImageDataset(Dataset):
         translation_label = self.translation_label[index].split(";")
         translation_label = list(map(float, translation_label))
         
-        return  image, np.array(rotation_label), np.array(translation_label)
+        return image, np.array(rotation_label), np.array(translation_label)
         
     def __len__(self):
         return len(self.img_path)
@@ -87,11 +88,16 @@ def get_validation_dataset(train_path,validation_data):
     return validation_dataset
 
 def get_train_dataloader(train_dataset):
-    train_loader = DataLoader(train_dataset, batch_size = 4, shuffle=True, num_workers=2)
+    train_loader = DataLoader(train_dataset,
+                              batch_size=4,
+                              shuffle=True,
+                              num_workers=os.cpu_count())
     return train_loader
     
 def get_validation_dataloader(validation_dataset):
-    validation_loader = DataLoader(validation_dataset, batch_size=4, shuffle=False)
+    validation_loader = DataLoader(validation_dataset,
+                                   batch_size=4,
+                                   shuffle=False)
     return validation_loader
 
 

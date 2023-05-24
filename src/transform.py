@@ -15,7 +15,7 @@ validation_transform = A.Compose([
     ToTensorV2()
     ])
 
-def get_train_dataset(train_path,training_data):
+def get_train_dataset(train_path, training_data):
     train_dataset = ImageDataset(train_path, 
                         training_data["image_path"].tolist(), 
                         training_data["rotation_matrix"].tolist(), 
@@ -24,7 +24,7 @@ def get_train_dataset(train_path,training_data):
     return train_dataset
 
 
-def get_validation_dataset(train_path,validation_data):    
+def get_validation_dataset(train_path, validation_data):    
     validation_dataset = ImageDataset(train_path, 
                         validation_data["image_path"].tolist(), 
                         validation_data["rotation_matrix"].tolist(), 
