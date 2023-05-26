@@ -2,11 +2,13 @@ import numpy as np
 import torch
 import wandb
 import argparse
+import timm
 
 from engine import train
 from utils import load_config, create_display_name, seed_everything, EarlyStopping
 from dataset import get_datasets, get_train_validation_set, get_train_dataloader, get_validation_dataloader, get_train_dataset, get_validation_dataset
 from model.baseline import BaseCNN
+from model.effnet import Effnet
 from inference import eval_model
 
 
@@ -69,4 +71,5 @@ if __name__ == "__main__":
                         device=device)
     
     print(f"\n{result}")
+
 

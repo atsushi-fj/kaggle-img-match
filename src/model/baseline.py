@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 
 
-class BaseCNN(torch.nn.Module):
+class BaseCNN(nn.Module):
     def __init__(self, dropout=0.2):
         super().__init__()
         self.layer_one = nn.Sequential(
